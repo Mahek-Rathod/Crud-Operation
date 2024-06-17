@@ -1,0 +1,9 @@
+{% block title %}Create/Update{% endblock title %}
+{% block content %}
+    <form action="{% if form.instance.id %}{% url 'student_edit' form.instance.id %} {% else %}  {% url 'student_create' %} {% endif %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="save">
+        <a href="{% url "student_list" %}">Back to List</a>
+    </form>
+{% endblock %}  

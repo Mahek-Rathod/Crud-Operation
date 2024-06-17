@@ -1,0 +1,9 @@
+{% block content %}
+  <h1>Student List</h1>
+  <table border="3">
+      <tr>
+        <td>{{ student.name }}</td>
+      </tr>
+  </table>
+  <a href="{% url 'student_create' %}">Create Student</a>
+{% endblock %}

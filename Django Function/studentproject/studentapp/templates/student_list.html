@@ -1,0 +1,13 @@
+{% block content %}
+  <h1>Student List</h1>
+  <table border="3">
+      {% for student in student %}
+      <tr>
+        <td><a href="{% url "student_detail" student.id %}">{{ student.name }}</a></td>
+        <td><a href="{% url 'student_edit' student.id %}">Edit</a></td>
+        <td><a href="{% url 'student_delete' student.id %}">Delete</a></td>
+      </tr>
+      {% endfor %}
+  </table>
+  <a href="{% url 'student_create' %}">Create Student</a>
+{% endblock %}
